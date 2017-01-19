@@ -4,8 +4,71 @@ block variables
   - var page_name = "Home"
 
 block stylesheets
+  style.
+    .col-sample {
+      box-shadow:inset 0 0 0 1px #eee;
+      padding:20px;
+    }
 
 block content
+  .container
+    .page-header
+      h1.title Protoplate
+      h5.description The starting point for all of my prototypes as of 2017-01-19T04:49:45Z
+
+    .section-header
+      h2.title Grid
+      p.description Just some basic flex-rows... The rest we'll roll on our own.
+
+    section.m-vertical--md.p-horizontal
+      h4 Without gutters
+      .flex.sm
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large With small gutters
+      .flex.sm.gutter-sm
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+        .col-sample
+          .name Add as many
+        .col-sample
+          .name as you'd like..
+
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large With medium gutters
+      .flex.sm.gutter-md
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+        .col-sample
+          .name Cold 04
+        .col-sample
+          .name Col 05
+        .col-sample
+          .name Col 06
+
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large With large gutters
+      .flex.sm.gutter-lg
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
 
 
 block scripts

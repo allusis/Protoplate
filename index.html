@@ -8,9 +8,99 @@
     <title>Home / Protoplate</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="./css/main.css">
+    <style>
+      .col-sample {
+        box-shadow:inset 0 0 0 1px #eee;
+        padding:20px;
+      }
+      
+    </style>
   </head>
   <body>
     <header></header>
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="page-header">
+          <h1 class="title">Protoplate</h1>
+          <h5 class="description">The starting point for all of my prototypes as of 2017-01-19T04:49:45Z</h5>
+        </div>
+        <div class="section-header">
+          <h2 class="title">Grid</h2>
+          <p class="description">Just some basic flex-rows... The rest we'll roll on our own.</p>
+        </div>
+        <section class="m-vertical--md p-horizontal">
+          <h4>Without gutters</h4>
+          <div class="flex sm">
+            <div class="col-sample">
+              <div class="name">Col 01</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 02</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 03</div>
+            </div>
+          </div>
+        </section>
+        <section class="m-vertical--md p-horizontal">
+          <h4 class="m-top--large">With small gutters</h4>
+          <div class="flex sm gutter-sm">
+            <div class="col-sample">
+              <div class="name">Col 01</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 02</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 03</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Add as many</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">as you'd like..</div>
+            </div>
+          </div>
+        </section>
+        <section class="m-vertical--md p-horizontal">
+          <h4 class="m-top--large">With medium gutters</h4>
+          <div class="flex sm gutter-md">
+            <div class="col-sample">
+              <div class="name">Col 01</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 02</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 03</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Cold 04</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 05</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 06</div>
+            </div>
+          </div>
+        </section>
+        <section class="m-vertical--md p-horizontal">
+          <h4 class="m-top--large">With large gutters</h4>
+          <div class="flex sm gutter-lg">
+            <div class="col-sample">
+              <div class="name">Col 01</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 02</div>
+            </div>
+            <div class="col-sample">
+              <div class="name">Col 03</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script></script>

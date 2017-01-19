@@ -1,6 +1,60 @@
+.page-wrapper {
+	padding:$gap 0;
+
+}
+.container {
+	width:100%;
+	max-width:$screen-lg - $gap-md;
+	padding:0 ($gap-md / 2);
+	margin:0 auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin:0 0 $gap-sm;
+	padding:0;
+}
+h2 {
+	font-size:26px;
+	text-transform:uppercase;
+}
+h3 {
+	font-size:18px;
+}
+h4 {
+	font-size:16px;
+}
+
+.page-header {
+	margin-bottom:$gap;
+	.title {
+		font-size:32px;
+		@include font-light;
+	}
+	.description {
+		font-size:14px;
+		@include font-regular;
+		color:rgba($text-color,0.8);
+		margin:0;
+	}
+}
+
+.section-header {
+	margin-top:$gap-md;
+	border-top:2px solid $border-lt;
+	padding-top:$gap;
+	.title {
+		color:$brand-primary;
+	}
+	.description {
+		margin:0;
+		font-size:14px;
+	}
+}
 
 .flex {
-	flex:1;
+	> div {
+		flex:1;
+	}
 	&.sm {
 		@media (min-width:$screen-sm) {
 			display:flex;
@@ -19,19 +73,25 @@
 	&.all {
 		display:flex;
 	}
-	&.gutter {
+	&.gutter-sm {
 		margin:0 (-($gap));
+		padding:0 ($gap-md / 2);
 		> div {
-			padding:0 $gap;
-		}
-		@media (min-width:$screen-lg) {
-			margin:0 (-($gap-md));
-			> div {
-				padding:0 $gap-md;
-			}
+			margin:0 $gap-xs;
 		}
 	}
-	.one-half {
-		min-width:50%;
+	&.gutter-md {
+		margin:0 (-($gap-md));
+		padding:0 ($gap-lg / 2);
+		> div {
+			margin:0 $gap-sm;
+		}
+	}
+	&.gutter-lg {
+		margin:0 (-($gap-lg));
+		padding:0 ($gap-lg / 2);
+		> div {
+			margin:0 $gap;
+		}
 	}
 }

@@ -16,3 +16,111 @@
 .rounded {
 	border-radius:50%;
 }
+
+.m-top--xs {margin-top:$gap-xs}
+.m-top--sm {margin-top:$gap-sm;}
+.m-top {margin-top:$gap}
+.m-top--md {margin-top:$gap-md}
+.m-top--lg {margin-top:$gap-lg}
+
+.m-bottom--xs {margin-bottom:$gap-xs}
+.m-bottom--sm {margin-bottom:$gap-sm;}
+.m-bottom {margin-bottom:$gap}
+.m-bottom--md {margin-bottom:$gap-md}
+.m-bottom--lg {margin-bottom:$gap-lg}
+
+.p-top--xs {padding-top:$gap-xs}
+.p-top--sm {padding-top:$gap-sm;}
+.p-top {padding-top:$gap}
+.p-top--md {padding-top:$gap-md}
+.p-top--lg {padding-top:$gap-lg}
+
+.p-bottom--xs {padding-bottom:$gap-xs}
+.p-bottom--sm {padding-bottom:$gap-sm;}
+.p-bottom {padding-bottom:$gap}
+.p-bottom--md {padding-bottom:$gap-md}
+.p-bottom--lg {padding-bottom:$gap-lg}
+
+.m-horizontal--xs {
+	margin-left:$gap-xs;
+	margin-right:$gap-xs;
+}
+.m-horizontal--sm {
+	margin-left:$gap-sm;
+	margin-right:$gap-sm;
+}
+.m-horizontal {
+	margin-left:$gap;
+	margin-right:$gap;
+}
+.m-horizontal--md {
+	margin-left:$gap-md;
+	margin-right:$gap-md;
+}
+.m-horizontal--lg {
+	margin-left:$gap-lg;
+	margin-right:$gap-lg;
+}
+.m-vertical--xs {
+  margin-top:$gap-xs;
+  margin-bottom:$gap-xs;
+}
+.m-vertical--sm {
+  margin-top:$gap-sm;
+  margin-bottom:$gap-sm;
+}
+.m-vertical {
+  margin-top:$gap;
+  margin-bottom:$gap;
+}
+.m-vertical--md {
+  margin-top:$gap-md;
+  margin-bottom:$gap-md;
+}
+.m-vertical--lg {
+  margin-top:$gap-lg;
+  margin-bottom:$gap-lg;
+}
+
+
+.p-horizontal--xs {
+	padding-left:$gap-xs;
+	padding-right:$gap-xs;
+}
+.p-horizontal--sm {
+	padding-left:$gap-sm;
+	padding-right:$gap-sm;
+}
+.p-horizontal {
+	padding-left:$gap;
+	padding-right:$gap;
+}
+.p-horizontal--md {
+	padding-left:$gap-md;
+	padding-right:$gap-md;
+}
+.p-horizontal--lg {
+	padding-left:$gap-lg;
+	padding-right:$gap-lg;
+}
+
+.p-vertical--xs {
+  padding-top:$gap-xs;
+  padding-bottom:$gap-xs;
+}
+.p-vertical--sm {
+  padding-top:$gap-sm;
+  padding-bottom:$gap-sm;
+}
+.p-vertical {
+  padding-top:$gap;
+  padding-bottom:$gap;
+}
+.p-vertical--md {
+  padding-top:$gap-md;
+  padding-bottom:$gap-md;
+}
+.p-vertical--lg {
+  padding-top:$gap-lg;
+  padding-bottom:$gap-lg;
+}
