@@ -1,0 +1,86 @@
+.btn-bs {
+	border-radius:2px;
+	border:0;
+	font-size:14px;
+	@include font-semibold;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	@media (max-width:$screen-sm-min) {
+		width:100%;
+		+ .btn-bs {
+			margin-top:$gap-sm;
+		}
+	}
+	&.btn-min {
+		min-width:100px;
+	}
+	&:hover,&:focus,&:active {
+		text-decoration:none;
+	}
+	&.btn-lg {
+		font-size:16px;
+		padding:12px 14px;
+		line-height:20px;
+	}
+	&.btn-xs {
+		font-size:11px;
+		padding:8px $gap-xs;
+		line-height:1;
+		text-transform:uppercase;
+	}
+	&.btn-xxs {
+		font-size:10px;
+		padding:$gap-xs;
+		line-height:1;
+	}
+	&.btn-block {
+		display:inline-flex;
+		width:100%;
+		margin:0;
+		+ .btn-block {
+			margin-top:$gap-sm;
+		}
+	}
+	&.disabled {
+		pointer-events: none;
+	}
+}
+
+.btn-back {
+	stroke:currentColor;
+	display:inline-flex;
+	align-items:center;
+	margin-bottom:$gap;
+	svg {
+		width:12px;
+		height:12px;
+		margin-right:$gap-sm;
+
+	}
+	span {
+		font-size:14px;
+		@include font-semibold;
+		text-transform:uppercase;
+	}
+}
+
+.btn-add {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	stroke:$blue;
+	transition:all 0.15s;
+}
+.btn-add {
+	border-radius:50%;
+	border:2px solid $blue;
+	height:26px;
+	width:26px;
+	background:none;
+	&:hover {
+		border-color:$blue;
+		stroke:$blue;
+	}
+}
+

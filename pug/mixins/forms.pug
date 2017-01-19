@@ -1,0 +1,134 @@
+mixin step(step_name, step_url, step_status)
+  li(class=step_status)
+    a(href=step_url)= step_name
+
+mixin input-text(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value)
+  div(class= 'slds-form-element ' + group_class)
+    label.slds-form-element__label(for=input_id)= input_label
+    .slds-form-element__control
+      input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value)
+
+mixin input-text-required(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value, has_error)
+  if has_error
+    div(class= 'slds-form-element slds-has-error' + group_class)
+      label.slds-form-element__label(for=input_id)
+        abbr.slds-required(title="required") *
+        | input_label
+      .slds-form-element__control
+        input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, required="", aria-describedby= 'error_#' + input_id)
+      .slds-form-element__help(id= 'error_' + input_id)
+        block
+  else
+    div(class= 'slds-form-element ' + group_class)
+      label.slds-form-element__label(for=input_id)
+        abbr.slds-required(title="required") *
+        | input_label
+      .slds-form-element__control
+        input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, required="")
+
+mixin input-text-disabled(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value)
+  div(class= 'slds-form-element ' + group_class)
+    label.slds-form-element__label(for=input_id)= input_label
+    .slds-form-element__control
+      input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, disabled='')
+
+mixin input-text-read-only(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value)
+  div(class= 'slds-form-element ' + group_class)
+    span.slds-form-element__label= input_label
+    .slds-form-element__control.slds-has-divider--bottom
+      span.slds-form-element__static= input_value
+
+mixin input-text-has-icon-right(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value, icon_url, icon_id, has_error, icon_class)
+  if has_error
+    div(class= 'slds-form-element slds-has-error ' + group_class)
+      label.slds-form-element__label(for=input_id)
+        abbr.slds-required(title="required") *
+        | input_label
+      .slds-form-element__control.slds-input-has-icon.slds-input-has-icon--right
+        input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, required="", aria-describedby= 'error_#' + input_id)
+        svg(class= 'slds-input__icon slds-icon-text-default ' + icon_class, aria-hidden='true')
+          use(xlink:href= '#' + icon_url + '#' + icon_id)
+      .slds-form-element__help(id= 'error_#' + input_id)
+        block
+  else
+    div(class= 'slds-form-element ' + group_class)
+      label.slds-form-element__label(for=input_id)= input_label
+      .slds-form-element__control.slds-input-has-icon.slds-input-has-icon--right
+        svg(class= 'slds-input__icon slds-icon-text-default ' + icon_class, aria-hidden='true')
+          use(xlink:href= '#' + icon_url + '#' + icon_id)
+        input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value)
+
+mixin input-text-has-icon-left(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value, icon_url, icon_id, has_error)
+  if has_error
+    div(class= 'slds-form-element slds-has-error' + group_class)
+      label.slds-form-element__label(for=input_id)
+        abbr.slds-required(title="required") *
+        | input_label
+      .slds-form-element__control.slds-input-has-icon.slds-input-has-icon--left
+        input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, required="", aria-describedby= 'error_' + input_id)
+        svg.slds-input__icon.slds-icon-text-default(aria-hidden='true')
+          use(xlink:href= icon_url + '#' + icon_id)
+      .slds-form-element__help(id= 'error_' + input_id)
+        block
+  else
+    div(class= 'slds-form-element ' + group_class)
+      label.slds-form-element__label(for=input_id)= input_label
+      .slds-form-element__control.slds-input-has-icon.slds-input-has-icon--left
+        svg.slds-input__icon.slds-icon-text-default(aria-hidden='true')
+          use(xlink:href= icon_url + '#' + icon_id)
+        input(class= 'slds-input ' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value)
+
+
+
+mixin textarea(group_class, textarea_id, textarea_label, textarea_placeholder, textarea_value, textarea_class, textarea_rows)
+  div(class= 'slds-form-element ' + group_class)
+    label.slds-form-element__label(for=textarea_id)= textarea_label
+    .slds-form-element__control
+      textarea(id=textarea_id, class= 'slds-textarea ' + textarea_class, placeholder=textarea_placeholder, rows=textarea_rows)= textarea_value
+
+mixin input-date(group_class, date_id, date_label, date_placeholder, date_value, date_class, date_size, date_polyfill, date_min, date_max)
+  div(class= 'slds-form-element ' + group_class)
+    label(for=date_id)= date_label
+    .slds-form-element__control
+      input(id=date_id, class= 'slds-input ' + date_class + date_size,type="date", data-format="MM/yyyy", min=date_min, max=date_max, data-polyfill=modal_polyfill, placeholder=date_placeholder, value=date_value)
+
+mixin input-number(number_id, number_label, number_type, number_placeholder, number_value, number_class, number_size, number_min, number_max)
+  .form-group
+    label(for=number_id)= number_label
+    input(id=number_id, class=number_class + number_size, type=number_type, placeholder=number_placeholder, value=number_value, min=number_min, max=number_max)
+
+mixin select(group_class, select_id, select_label, select_class)
+  div(class=group_class)
+    label(for=select_id, class="slds-form-element__label")= select_label
+    .slds-form-element__control
+      .slds-select_container
+        select(id=select_id, class= 'slds-select ' + select_class)
+          block
+
+mixin checkbox(checkbox_id, checkbox_label, checkbox_name, checkbox_class, checkbox_checked)
+  if checkbox_checked
+    span(class= 'gu-checkbox ' + checkbox_class)
+      div.uiInput.uiInputCheckbox
+        label.slds-checkbox__label.form-element__label(for=checkbox_id)
+          span= checkbox_label
+        input(id=checkbox_id, type='checkbox', name=checkbox_name, checked='checked', class="checked")
+  else
+    span(class= 'gu-checkbox ' + checkbox_class)
+      div.uiInput.uiInputCheckbox
+        label.slds-checkbox__label.form-element__label(for=checkbox_id)
+          span= checkbox_label
+        input(id=checkbox_id, type='checkbox', name=checkbox_name)
+
+mixin radio(radio_id, radio_label, radio_name, radio_class, radio_checked)
+  if radio_checked
+    span(class= 'gu-radio ' + radio_class)
+      div.uiInput.uiInputRadio
+        label.slds-radio__label.form-element__label(for=radio_id)
+          span= radio_label
+        input(id=radio_id, type='radio', name=radio_name, checked='checked', class="checked")
+  else
+    span(class= 'gu-radio ' + radio_class)
+      div.uiInput.uiInputRadio
+        label.slds-radio__label.form-element__label(for=radio_id)
+          span= radio_label
+        input(id=radio_id, type='radio', name=radio_name)

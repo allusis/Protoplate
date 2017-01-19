@@ -1,0 +1,37 @@
+
+.flex {
+	flex:1;
+	&.sm {
+		@media (min-width:$screen-sm) {
+			display:flex;
+		}
+	}
+	&.md {
+		@media (min-width:$screen-md) {
+			display:flex;
+		}
+	}
+	&.lg {
+		@media (min-width:$screen-lg) {
+			display:flex;
+		}
+	}
+	&.all {
+		display:flex;
+	}
+	&.gutter {
+		margin:0 (-($gap));
+		> div {
+			padding:0 $gap;
+		}
+		@media (min-width:$screen-lg) {
+			margin:0 (-($gap-md));
+			> div {
+				padding:0 $gap-md;
+			}
+		}
+	}
+	.one-half {
+		min-width:50%;
+	}
+}

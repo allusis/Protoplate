@@ -1,0 +1,18 @@
+.semibold {
+	@include font-semibold;
+}
+.uppercase {
+	text-transform:uppercase;
+}
+.underline {
+	text-decoration:underline
+}
+.italic {
+	font-style:italic;
+}
+.block {
+	display:block;
+}
+.rounded {
+	border-radius:50%;
+}

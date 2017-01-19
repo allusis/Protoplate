@@ -1,0 +1,43 @@
+html {
+	position:relative;
+	min-height:100%;
+	@include box(border-box);
+	font-family:$font-regular;
+}
+body {
+	@include font-smoothing;
+	margin:0;
+	padding:0;
+	color:$text-color;
+	background:$body-bg;
+}
+
+
+a {
+	cursor:pointer;
+	transition:all 0.15s ease;
+	text-decoration:none;
+	//color:$brand-primary;
+	&:hover,&:focus,&:active {
+		text-decoration:underline;
+		color:darken($brand-primary,10%);
+	}
+}
+
+label {
+	font-weight:$weight-semibold;
+	//text-transform:uppercase;
+	color:#777;
+}
+
+hr {
+	height:2px;
+	padding:0;
+	margin:$gap 0;
+	background-color:rgba($blue,0.3);
+	border:0;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}

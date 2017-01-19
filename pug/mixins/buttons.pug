@@ -1,0 +1,50 @@
+mixin input-text-required(group_class, input_id, input_label, input_type, input_class, input_placeholder, input_value, has_error)
+  if has_error
+    div(class= 'slds-form-element slds-has-error' + group_class)
+      label.slds-form-element__label(for=input_id)
+        abbr.slds-required(title="required") *
+        | input_label
+      .slds-form-element__control
+        input(class= 'slds-input' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, required="", aria-describedby= 'error_' + input_id)
+      .slds-form-element__help(id= 'error_' + input_id)
+        block
+  else
+    div(class= 'slds-form-element' + group_class)
+      label.slds-form-element__label(for=input_id)
+        abbr.slds-required(title="required") *
+        | input_label
+      .slds-form-element__control
+        input(class= 'slds-input' + input_class, id=input_id, type=input_type, placeholder=input_placeholder, value=input_value, required="")
+
+
+mixin btn-primary(btn_class, btn_id, btn_title, btn_href, is_disabled)
+  if is_disabled
+    a(href=btn_href, class= 'btn-bs slds-button slds-button--brand ' + btn_class, id=btn_id, disabled="disabled")= btn_title
+  else
+    a(href=btn_href, class= 'btn-bs slds-button slds-button--brand ' + btn_class, id=btn_id)= btn_title
+
+mixin btn-secondary(btn_class, btn_id, btn_title, btn_href, is_disabled)
+  if is_disabled
+    a(href=btn_href, class= 'btn-bs slds-button slds-button--brand-secondary ' + btn_class, id=btn_id, disabled="disabled")= btn_title
+  else
+    a(href=btn_href, class= 'btn-bs slds-button slds-button--brand-secondary ' + btn_class, id=btn_id)= btn_title
+
+mixin btn-default(btn_class, btn_id, btn_title, btn_href, is_disabled)
+  if is_disabled
+    a(href=btn_href, class= 'btn-bs slds-button slds-button--neutral ' + btn_class, id=btn_id, disabled="disabled")= btn_title
+  else
+    a(href=btn_href, class= 'btn-bs slds-button slds-button--neutral ' + btn_class, id=btn_id)= btn_title
+
+mixin btn-action(btn_class, btn_id, btn_title, btn_href, is_disabled, svg_file, svg_id, svg_class, svg_title)
+  if is_disabled
+    a(href=btn_href, class= 'btn-action ' + btn_class, id=btn_id, disabled="disabled")= btn_title
+      span.title= btn_title
+      span.icon
+        svg(class=svg_class, aria-hidden="true", title=svg_title)
+          use(xlink:href= svg_file + '#' + svg_id)
+  else
+    a(href=btn_href, class= 'btn-action ' + btn_class, id=btn_id)
+      span.title= btn_title
+      span.icon
+        svg(class=svg_class, aria-hidden="true", title=svg_title)
+          use(xlink:href= svg_file + '#' + svg_id)

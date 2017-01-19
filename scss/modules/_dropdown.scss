@@ -1,0 +1,157 @@
+.dropdown-items {
+	display:none;
+}
+
+.dropdown {
+	position:relative;
+	z-index:5;
+	display:block;
+	min-width:240px;
+	.dropdown-items {
+		margin-top:$gap-xs;
+		border-radius:$border-radius-sm;
+		box-shadow:0 3px 6px rgba(black, 0.05), 0 3px 6px rgba(black, 0.15);
+		padding-bottom:$gap-xs;
+		padding-top:$gap-xs;
+		position:absolute;
+		background:white;
+		border:1px solid #ddd;
+		width:100%;
+		display:none;
+		flex-direction:column;
+		right:0;
+		> a {
+			font-size:16px;
+			padding:$gap-xs $gap;
+			color:#444;
+			&:hover {
+				background:#eee;
+				text-decoration:none;
+			}
+			&.active {
+				display:none;
+			}
+			&:focus,&:active {
+				background:$blue;
+				color:white;
+				text-decoration:none;
+			}
+		}
+	}
+	label {
+		stroke:$blue;
+		> .title {
+			height:30px;
+			border:1px solid #ccc;
+			display:flex;
+			align-items:center;
+			padding-left:$gap-sm;
+			padding-right:$gap-md;
+			position:relative;
+			font-size:16px;
+			border-radius:$border-radius-sm;
+			color:$blue;
+			@include font-regular;
+			-webkit-user-select: none;
+		}
+		.icon {
+			transition:all 0.15s;
+		}
+	}
+	input[type="checkbox"] {
+		display:none;
+		&:checked {
+			+ label {
+				color:$brand-primary;
+				.icon {
+					transform:translateY(-50%) rotate(180deg);
+				}
+				.title {
+					border-color:$brand-primary;
+				}
+			}
+			~ .dropdown-items {
+				display:flex;
+			}
+		}
+	}
+	&.has-caret {
+		label > .icon {
+			position:absolute;
+			right:$gap-sm;
+			top:50%;
+			transform:translateY(-50%);
+			svg {
+				width:16px;
+				height:16px;
+			}
+		}
+	}
+	&:not(.has-caret) {
+		> .title:after {
+			margin-left:$gap-sm;
+			content:"";
+			background-image:url('../img/caret-down.svg');
+			width:12px;
+			height:12px;
+			background-size:cover;
+			background-repeat:no-repeat;
+			display:block;
+		}
+		input[type="checkbox"]:checked {
+			~ .title:after {
+				transform:rotate(-180deg)
+			}
+		}
+	}
+}
+
+.nav-dropdown {
+	position:relative;
+	.dropdown-items {
+		display:none;
+		position:relative;
+		width:100%;
+		> a {
+			display:block;
+			&:hover {
+				background:#eee;
+				text-decoration:none;
+			}
+		}
+	}
+	> label {
+		display:flex;
+		align-items:center;
+		&:after {
+			margin-left:$gap-sm;
+			content:"";
+			background-image:url('../img/caret-down.svg');
+			width:12px;
+			height:12px;
+			background-size:cover;
+			background-repeat:no-repeat;
+			display:block;
+		}
+	}
+	input[type="checkbox"] {
+		display:none;
+		&:checked {
+			~ .dropdown-items {
+				display:block;
+			}
+			+ label:after {
+				transform:rotate(-180deg)
+			}
+		}
+	}
+	&.active {
+		+ .dropdown-items {
+			display:block;
+		}
+		> label:after {
+			transform:rotate(-180deg)
+		}
+	}
+}
+

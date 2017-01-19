@@ -1,0 +1,17 @@
+mixin dropdown(dropdown_id, dropdown_label, dropdown_class, has_caret)
+  if has_caret
+    .dropdown.has-caret
+      input(type="checkbox", name= dropdown_id, id= dropdown_id)
+      label(class= dropdown_class, for= dropdown_id)
+        .title= dropdown_label
+        +svg("img/sprites/base.svg", "arrow-sort", "", "")
+      .dropdown-items
+        block
+  else
+    .dropdown
+      input(type="checkbox", name= dropdown_id, id= dropdown_id)
+      label(class= dropdown_class, for= dropdown_id)
+        .title= dropdown_label
+      .dropdown-items
+        block
+

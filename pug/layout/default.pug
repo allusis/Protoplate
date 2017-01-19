@@ -1,0 +1,27 @@
+- var site_name = "Protoplate"
+
+block variables
+  - var page_name = "Index"
+
+doctype html
+html(lang="en", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink")
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    title= page_name + ' / ' + site_name
+
+    link(rel="icon", type="image/png", href="img/favicon.png")
+
+    include stylesheets.pug
+    block stylesheets
+
+  body
+
+    include ../components/header.pug
+    block content
+
+    include scripts.pug
+    block scripts
