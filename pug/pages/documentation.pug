@@ -1,0 +1,85 @@
+extends ../layout/default.pug
+
+block page-variables
+  - var PageName = "Documentation"
+  - var PageID = 'documentation';
+
+block stylesheets
+  style.
+    .col-sample {
+      box-shadow:inset 0 0 0 1px #eee;
+      padding:20px;
+    }
+
+block left-sidebar
+  .sidebar.left
+    nav
+      .nav-heading Flex
+      a(href="#columns") Columns
+      a(href="#alignment") Alignment
+
+block content
+  main
+    .page-header
+      h1.title Documentation
+      h5.description Thing's that I've probably spent too much time refactoring, and finally decided to record.
+
+    .section-header
+      h2 Grid
+      p.description Just some basic flex-rows... The rest we'll roll on our own as needed
+
+    section.m-vertical--md.p-horizontal
+      h4 Without gutters
+      .flex.sm
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large With small gutters
+      .flex.sm.gutter-sm
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+        .col-sample
+          .name Add as many
+        .col-sample
+          .name as you'd like..
+
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large With medium gutters
+      .flex.sm.gutter-md
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+        .col-sample
+          .name Cold 04
+        .col-sample
+          .name Col 05
+        .col-sample
+          .name Col 06
+
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large With large gutters
+      .flex.sm.gutter-lg
+        .col-sample
+          .name Col 01
+        .col-sample
+          .name Col 02
+        .col-sample
+          .name Col 03
+
+
+
+block scripts
+  script.
+

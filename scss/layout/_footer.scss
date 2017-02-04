@@ -1,3 +1,40 @@
 footer {
+	height:$footer-height;
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	background:$footer-bg;
+	color:$footer-color;
 
+	.copyright {
+		font-size:12px;
+		@include font-semibold;
+	}
+	.container {
+		flex:1;
+		align-items:center;
+		@media (min-width:$screen-sm) {
+			display:flex;
+		}
+	}
+	nav {
+		font-size:14px;
+		@media (min-width:$screen-sm) {
+			margin-left:auto;
+			display:flex;
+		}
+		> a {
+			color:$footer-color;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			padding:0 $gap-sm;
+			&:hover,&:focus {
+				color:$header-color;
+			}
+		}
+		svg {
+			display:none;
+		}
+	}
 }

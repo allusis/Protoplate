@@ -25,6 +25,13 @@ $text-color:                #58656E;
 $text-medium:               $gray-md;
 $text-light:                #aaa;
 
+$header-height:             60px;
+$header-bg:                 $blue;
+$header-color:              white;
+
+$footer-height:             50px;
+$footer-bg:                 $brand-gray;
+$footer-color:              white;
 
 
 $link-color:                $blue;
@@ -126,5 +133,7 @@ $screen-sm:     768px;
 $screen-sm-ls:  1024px;
 $screen-md:     1025px;
 $screen-lg:     1200px;
+
+$max-content-width:     1160px;
 
 

@@ -5,101 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Home / Protoplate</title>
+    <title>About / Protoplate</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="./css/main.css">
-    <style>
-      .col-sample {
-        box-shadow:inset 0 0 0 1px #eee;
-        padding:20px;
-      }
-      
-    </style>
   </head>
   <body>
-    <header></header>
     <div class="page-wrapper">
-      <div class="container">
-        <div class="page-header">
-          <h1 class="title">Protoplate</h1>
-          <h5 class="description">The starting point for all of my prototypes as of 2017-01-19T04:49:45Z</h5>
+      <header>
+        <div class="container">
+          <div class="site-name">Protoplate</div>
+          <nav class="primary-nav"><a href="index.html">
+              <svg>
+                <use xlink:href="demo/img/nav.svg#about"></use>
+              </svg><span class="name">About</span></a><a href="documentation.html">
+              <svg>
+                <use xlink:href="demo/img/nav.svg#documents"></use>
+              </svg><span class="name">Documentation</span></a>
+          </nav>
         </div>
-        <div class="section-header">
-          <h2 class="title">Grid</h2>
-          <p class="description">Just some basic flex-rows... The rest we'll roll on our own.</p>
-        </div>
-        <section class="m-vertical--md p-horizontal">
-          <h4>Without gutters</h4>
-          <div class="flex sm">
-            <div class="col-sample">
-              <div class="name">Col 01</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 02</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 03</div>
-            </div>
+      </header>
+      <div class="page-content">
+        <main>
+          <div class="page-header">
+            <h1 class="title">What is this?</h1>
+            <h5 class="description">The starting point for all of my prototypes as of 2017-02-03T23:32:36Z</h5>
           </div>
-        </section>
-        <section class="m-vertical--md p-horizontal">
-          <h4 class="m-top--large">With small gutters</h4>
-          <div class="flex sm gutter-sm">
-            <div class="col-sample">
-              <div class="name">Col 01</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 02</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 03</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Add as many</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">as you'd like..</div>
-            </div>
-          </div>
-        </section>
-        <section class="m-vertical--md p-horizontal">
-          <h4 class="m-top--large">With medium gutters</h4>
-          <div class="flex sm gutter-md">
-            <div class="col-sample">
-              <div class="name">Col 01</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 02</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 03</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Cold 04</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 05</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 06</div>
-            </div>
-          </div>
-        </section>
-        <section class="m-vertical--md p-horizontal">
-          <h4 class="m-top--large">With large gutters</h4>
-          <div class="flex sm gutter-lg">
-            <div class="col-sample">
-              <div class="name">Col 01</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 02</div>
-            </div>
-            <div class="col-sample">
-              <div class="name">Col 03</div>
-            </div>
-          </div>
-        </section>
+          <section class="m-vertical--md">
+            <h3>What can I do with it?</h3>
+            <h5 class="description">Break it, fix it, contribute to it, ignore it and do it yourself.</h5>
+            <hr>
+            <h3>How can I use this to enhance my workflow?</h3>
+            <h5 class="description">Well really you'll want to organize the PUG, and SCSS files the way that best makes sense for you and your projects. This structure makes sense for me right now, but things change, and so must we.</h5>
+            <h3>Cool I hear that, how do I get started?</h3>
+            <ol>
+              <li>Install Node / NPM</li>
+              <li>Clone this repository</li>
+              <li><code>$ npm install</code></li>
+              <li><code>$ gulp</code></li>
+            </ol>
+          </section>
+        </main>
       </div>
+      <footer>
+        <div class="container">
+          <div class="copyright">Copyright
+            <script>document.write(new Date().getFullYear())</script><span> Protoplate</span>
+          </div>
+          <nav><a href="index.html">
+              <svg>
+                <use xlink:href="demo/img/nav.svg#about"></use>
+              </svg><span class="name">About</span></a><a href="documentation.html">
+              <svg>
+                <use xlink:href="demo/img/nav.svg#documents"></use>
+              </svg><span class="name">Documentation</span></a>
+          </nav>
+        </div>
+      </footer>
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/main.js"></script>

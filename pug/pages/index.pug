@@ -1,74 +1,32 @@
 extends ../layout/default.pug
 
-block variables
-  - var page_name = "Home"
+block page-variables
+  - var PageName = "About"
+  - var PageID = 'about-us';
 
 block stylesheets
-  style.
-    .col-sample {
-      box-shadow:inset 0 0 0 1px #eee;
-      padding:20px;
-    }
 
 block content
-  .container
+  main
     .page-header
-      h1.title Protoplate
-      h5.description The starting point for all of my prototypes as of 2017-01-19T04:49:45Z
+      h1.title What is this?
+      h5.description The starting point for all of my prototypes as of 2017-02-03T23:32:36Z
 
-    .section-header
-      h2.title Grid
-      p.description Just some basic flex-rows... The rest we'll roll on our own.
+    section.m-vertical--md
 
-    section.m-vertical--md.p-horizontal
-      h4 Without gutters
-      .flex.sm
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
-
-    section.m-vertical--md.p-horizontal
-      h4.m-top--large With small gutters
-      .flex.sm.gutter-sm
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
-        .col-sample
-          .name Add as many
-        .col-sample
-          .name as you'd like..
-
-    section.m-vertical--md.p-horizontal
-      h4.m-top--large With medium gutters
-      .flex.sm.gutter-md
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
-        .col-sample
-          .name Cold 04
-        .col-sample
-          .name Col 05
-        .col-sample
-          .name Col 06
-
-    section.m-vertical--md.p-horizontal
-      h4.m-top--large With large gutters
-      .flex.sm.gutter-lg
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
+      h3 What can I do with it?
+      h5.description Break it, fix it, contribute to it, ignore it and do it yourself.
+      hr
+      h3 How can I use this to enhance my workflow?
+      h5.description Well really you'll want to organize the PUG, and SCSS files the way that best makes sense for you and your projects. This structure makes sense for me right now, but things change, and so must we.
+      h3 Cool I hear that, how do I get started?
+      ol
+        li Install Node / NPM
+        li Clone this repository
+        li
+          code $ npm install
+        li
+          code $ gulp
 
 
 block scripts

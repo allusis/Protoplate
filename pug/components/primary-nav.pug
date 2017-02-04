@@ -1,0 +1,16 @@
+block PrimaryNavigation
+  - var NavItems = [{'url':'index','title':'About', 'img':'nav','key':'about'},{'url':'documentation','title':'Documentation', 'img':'nav','key':'documents'}];
+
+each page,i in NavItems
+  if PageID === page.url
+    a(class="active", href= page.url + '.html')
+      svg
+        use(xlink:href= 'demo/img/' + page.img + '.svg#' + page.key)
+      span.name= page.title
+  else
+    a(href= page.url + '.html')
+      svg
+        use(xlink:href= 'demo/img/' + page.img + '.svg#' + page.key)
+      span.name= page.title
+
+

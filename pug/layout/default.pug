@@ -1,7 +1,9 @@
-- var site_name = "Protoplate"
+block site-variables
+  - var SiteName = "Protoplate"
 
-block variables
-  - var page_name = "Index"
+block page-variables
+  - var PageName = "Home"
+  - var PageID = 'home';
 
 doctype html
 html(lang="en", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink")
@@ -11,7 +13,7 @@ html(lang="en", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.o
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     meta(name='description', content='')
-    title= page_name + ' / ' + site_name
+    title= PageName + ' / ' + SiteName
 
     link(rel="icon", type="image/png", href="img/favicon.png")
 
@@ -20,9 +22,13 @@ html(lang="en", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.o
 
   body
 
-    include ../components/header.pug
     .page-wrapper
+      include ../components/header.pug
+      .page-content
+        block left-sidebar
         block content
+        block right-sidebar
+      include ../components/footer.pug
 
     include scripts.pug
     block scripts
