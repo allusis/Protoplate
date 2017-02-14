@@ -1,11 +1,13 @@
 // Scaffolding
 @import "base/variables";
 @import "base/mixins";
-@import "base/selectors";
+@import "base/scaffolding";
+
 @import "base/functions";
 @import "base/helpers";
 
 // Page layout elements
+@import "layout/flexgrid";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/page";

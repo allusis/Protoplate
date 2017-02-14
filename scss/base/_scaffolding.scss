@@ -1,0 +1,80 @@
+// setup the css4 variable definitions
+:root {
+  // for each variable map
+  @each $var-map-name, $var-map in $var-maps {
+    // for each variable in the variable map
+    @each $var, $val in $var-map {
+      // if it is a map, go another level deep
+      @if type-of($val) == map {
+        // each in the map
+        @each $var-n, $val-n in $val {
+          // do the definition
+          #{--$var-map-name}-#{$var}-#{$var-n}: $val-n;
+        }
+      } @else {
+        // do the definition
+        #{--$var-map-name}-#{$var}: $val;
+      }
+    }
+  }
+}
+
+*, *:before, *:after {box-sizing: inherit}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  //@include font-smoothing;
+  margin:0;
+  padding:0;
+  @include v(font-size, body);
+  @include v(font-family, body);
+  @include v(font-weight, body);
+  @include v(line-height, body);
+  @include v(background-color, background);
+
+  // color it red if no CSS4 variables
+  color: red;
+  // override "show standard" with "null" which means no CSS4 support will still be red
+  // if we didn't do this, it would create the fallback.
+  @include v(color, text, null);
+}
+
+h1, h2, h3, h4 {
+  @include v(line-height, head);
+  @include v(font-family, head);
+  @include v(font-weight, head);
+}
+
+h1 { @include v(font-size, h1); }
+h2 { @include v(font-size, h2); }
+h3 { @include v(font-size, h3); }
+h4 { @include v(font-size, h4); }
+
+a {
+  cursor:pointer;
+  transition:all 0.15s ease;
+  text-decoration:none;
+  color:$link-color;
+  &:hover,&:focus,&:active {
+    text-decoration:underline;
+    color:$link-active;
+  }
+}
+
+label {
+  font-weight:$weight-semibold;
+  color:$text-color;
+}
+
+hr {
+  height:1px;
+  padding:0;
+  margin:$gap-md 0;
+  background-color:rgba(black,0.1);
+  border:0;
+}
+
+

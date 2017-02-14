@@ -8,26 +8,30 @@ block stylesheets
 
 block content
   main
-    .page-header
-      h1.title What is this?
-      h5.description The starting point for all of my prototypes as of 2017-02-03T23:32:36Z
+    .page-hero
+      .container
+        .row.middle-xs
+          h1.col-sm.title protoplate
+          .col-sm.description Plating pug's since they were a bluish-green color.
 
-    section.m-vertical--md
 
-      h3 What can I do with it?
-      h5.description Break it, fix it, contribute to it, ignore it and do it yourself.
-      hr
-      h3 How can I use this to enhance my workflow?
-      h5.description Well really you'll want to organize the PUG, and SCSS files the way that best makes sense for you and your projects. This structure makes sense for me right now, but things change, and so must we.
-      h3 Cool I hear that, how do I get started?
-      ol
-        li Install Node / NPM
-        li Clone this repository
-        li
-          code $ npm install
-        li
-          code $ gulp
+    .container-narrow
+      section.m-vertical--md
 
+        h3 What can I do with it?
+        .description Break it, fix it, contribute to it, or you could just ignore it and do it yourself.
+        hr
+        h3 How can I use this to enhance my workflow?
+        .description Take what I've given you, and make it into something that'll make you work faster and better.
+        hr
+        h3 Cool I hear that, how do I get started?
+        ol
+          li Install Node / NPM
+          li Clone this repository
+          li
+            code $ npm install
+          li
+            code $ gulp
 
 block scripts
   script.

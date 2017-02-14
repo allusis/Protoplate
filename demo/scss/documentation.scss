@@ -1,0 +1,16 @@
+.code-block {
+	pre, pre.prettyprint {
+		margin:10px 0 20px;
+		background:#f6f6f6;
+		padding:10px 20px;
+		border:1px solid #ddd;
+	}
+}
+.col-sample {
+	box-shadow:inset 0 0 0 1px #eee;
+	padding:20px;
+}
+
+.flex-sm.gutter-lg.wrap-all > div {
+	min-width:240px;
+}

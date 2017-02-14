@@ -1,34 +1,16 @@
 header {
-	background:$header-bg;
-	color:$header-color;
-	height:$header-height;
+	//background:$header-bg;
+	//color:$header-color;
+	//height:$header-height;
 	display:flex;
 	align-items:center;
-	a {
-		color:$header-color;
-		align-items:center;
-		stroke:currentColor;
-		transition:all 0.15s;
-		&:hover,&:focus {
-			background:darken($header-bg,5%);
-			color:$header-color;
-			svg {
-				opacity:1;
-			}
-		}
-		&:hover,&:focus,&:active {
-			text-decoration:none;
-		}
-		&:active {
-			background:darken($header-bg,15%);
-		}
-	}
+
 	.container {
 		display:flex;
 	}
 	svg {
-		width:24px;
-		height:24px;
+		width: 40px;
+		height:40px;
 		margin-right:$gap-sm;
 		opacity:0.5;
 	}
@@ -43,11 +25,29 @@ header {
 		align-items:center;
 		margin-left:auto;
 	}
-	> a {
+	a {
+		//color:$header-color;
+		align-items:center;
+		fill:currentColor;
+		transition:all 0.15s;
 		display:flex;
 		align-items:center;
-		height:$header-height;
+		//height:$header-height;
 		padding:0 ($gap-sm + $gap-xs);
+		font-weight:500;
+		&:hover,&:focus {
+			//background:darken($header-bg,5%);
+			//color:$header-color;
+			svg {
+				opacity:1;
+			}
+		}
+		&:hover,&:focus,&:active {
+			text-decoration:none;
+		}
+		&:active {
+			//background:darken($header-bg,15%);
+		}
 	}
 }
 
@@ -56,4 +56,9 @@ header {
 	align-items:center;
 	font-size:24px;
 	text-transform:uppercase;
+	//color:white;
+	&:hover,&:focus,&:active {
+		text-decoration:none;
+		color:white;
+	}
 }

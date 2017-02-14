@@ -7,43 +7,38 @@
     <meta name="description" content="">
     <title>About / Protoplate</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/flexboxgrid/dist/flexboxgrid.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body>
     <div class="page-wrapper">
-      <header>
-        <div class="container">
-          <div class="site-name">Protoplate</div>
-          <nav class="primary-nav"><a href="index.html">
-              <svg>
-                <use xlink:href="demo/img/nav.svg#about"></use>
-              </svg><span class="name">About</span></a><a href="documentation.html">
-              <svg>
-                <use xlink:href="demo/img/nav.svg#documents"></use>
-              </svg><span class="name">Documentation</span></a>
-          </nav>
-        </div>
-      </header>
       <div class="page-content">
         <main>
-          <div class="page-header">
-            <h1 class="title">What is this?</h1>
-            <h5 class="description">The starting point for all of my prototypes as of 2017-02-03T23:32:36Z</h5>
+          <div class="page-hero">
+            <div class="container">
+              <div class="row middle-xs">
+                <h1 class="col-sm title">protoplate</h1>
+                <div class="col-sm description">Plating pug's since they were a bluish-green color.</div>
+              </div>
+            </div>
           </div>
-          <section class="m-vertical--md">
-            <h3>What can I do with it?</h3>
-            <h5 class="description">Break it, fix it, contribute to it, ignore it and do it yourself.</h5>
-            <hr>
-            <h3>How can I use this to enhance my workflow?</h3>
-            <h5 class="description">Well really you'll want to organize the PUG, and SCSS files the way that best makes sense for you and your projects. This structure makes sense for me right now, but things change, and so must we.</h5>
-            <h3>Cool I hear that, how do I get started?</h3>
-            <ol>
-              <li>Install Node / NPM</li>
-              <li>Clone this repository</li>
-              <li><code>$ npm install</code></li>
-              <li><code>$ gulp</code></li>
-            </ol>
-          </section>
+          <div class="container-narrow">
+            <section class="m-vertical--md">
+              <h3>What can I do with it?</h3>
+              <div class="description">Break it, fix it, contribute to it, or you could just ignore it and do it yourself.</div>
+              <hr>
+              <h3>How can I use this to enhance my workflow?</h3>
+              <div class="description">Take what I've given you, and make it into something that'll make you work faster and better.</div>
+              <hr>
+              <h3>Cool I hear that, how do I get started?</h3>
+              <ol>
+                <li>Install Node / NPM</li>
+                <li>Clone this repository</li>
+                <li><code>$ npm install</code></li>
+                <li><code>$ gulp</code></li>
+              </ol>
+            </section>
+          </div>
         </main>
       </div>
       <footer>
@@ -62,8 +57,7 @@
         </div>
       </footer>
     </div>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
     <script></script>
   </body>
 </html>

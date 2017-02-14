@@ -1,73 +1,93 @@
+// the variable mixin takes a property and variable name
+@mixin v($prop, $var, $show-fall: true) {
+  // get the property's map name(s)
+  $map-name: map-get($props, $prop);
+  $nest-name: null;
+  $nest-map-name: null;
+  $map: null;
+  $var-fall: null;
+  $var-output: null;
+  // if a list, we need to go deeper
+  @if type-of($map-name) == list {
+    $nest-name: nth($map-name, 1);
+    $nest-map-name: nth($map-name, 2);
+  }
+  // if it is a nested map
+  @if $nest-name {
+    // get the map from nested map-name
+    $map: map-get($var-maps, $nest-name);
+    // get the nested map
+    $nest-map: map-get($map, $nest-map-name);
+    // get the var value fro mthe nested map
+    $var-fall: map-get($nest-map, $var);
+    $var-output: var(--#{$nest-name}-#{$nest-map-name}-#{$var});
+  } @else {
+    // get the map from map name
+    $map: map-get($var-maps, $map-name);
+    // fallback, grab the variable's value from the map
+    $var-fall: map-get($map, $var);
+    $var-output: var(--#{$map-name}-#{$var});
+  }
+  // if show standard is not overridden to be null
+  @if $show-fall {
+    #{$prop}: $var-fall;
+  }
+  // css4 variable output
+  #{$prop}: $var-output;
+}
+
 @mixin word-wrap {
-			word-break:  break-word;
-	-webkit-hyphens: auto;
-		 -moz-hyphens: auto;
-					hyphens: auto;
-}
-
-@mixin font-smoothing {
-	text-rendering: optimizeLegibility;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing:antialiased;
-					font-smoothing:antialiased;
-						 font-smooth:always;
-}
-
-@mixin box($box-sizing) {
-	box-sizing:$box-sizing;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 // Better than box-shadow for shadowing non-square shapes.
 @mixin drop-shadow($dropshadow) {
-	-webkit-filter:drop-shadow($dropshadow);
-		 -moz-filter:drop-shadow($dropshadow);
-			-ms-filter:drop-shadow($dropshadow);
-			 -o-filter:drop-shadow($dropshadow);
-					filter:drop-shadow($dropshadow);
+  filter:drop-shadow($dropshadow);
 }
 
 @mixin vertical-align($position) {
-	position:$position;
-	top: 50%;
-	@include transform(translateY(-50%));
+  position:$position;
+  top: 50%;
+  @include transform(translateY(-50%));
 }
 
 // Material-like shadowing
 @mixin shadow($level: 1) {
-	@if $level == 1 {box-shadow: 0 1px 3px rgba(#333,0.12), 0 1px 2px rgba(#333,0.24);}
-	@else if $level == 2 {box-shadow: 0 3px 6px rgba(#333,0.16), 0 3px 6px rgba(#333,0.23);}
-	@else if $level == 3 {box-shadow: 0 10px 20px rgba(#333,0.19), 0 6px 6px rgba(#333,0.23);}
-	@else if $level == 4 {box-shadow: 0 14px 28px rgba(#333,0.25), 0 10px 10px rgba(#333,0.22);}
-	@else if $level == 5 {box-shadow: 0 19px 38px rgba(#333,0.30), 0 15px 12px rgba(#333,0.22);}
+  @if $level == 1 {box-shadow: 0 1px 3px rgba(#333,0.12), 0 1px 2px rgba(#333,0.24);}
+  @else if $level == 2 {box-shadow: 0 3px 6px rgba(#333,0.16), 0 3px 6px rgba(#333,0.23);}
+  @else if $level == 3 {box-shadow: 0 10px 20px rgba(#333,0.19), 0 6px 6px rgba(#333,0.23);}
+  @else if $level == 4 {box-shadow: 0 14px 28px rgba(#333,0.25), 0 10px 10px rgba(#333,0.22);}
+  @else if $level == 5 {box-shadow: 0 19px 38px rgba(#333,0.30), 0 15px 12px rgba(#333,0.22);}
 }
 
 @mixin font-regular {
-	font-family:$font-regular;
-	font-weight:$weight-regular;
+  font-family:$font-regular;
+  font-weight:$weight-regular;
 }
 
 @mixin font-light {
-	font-family:$font-light;
-	font-weight:$weight-light;
+  font-family:$font-light;
+  font-weight:$weight-light;
 }
 
 @mixin font-semibold {
-	font-family:$font-semibold;
-	font-weight:$weight-semibold;
+  font-family:$font-semibold;
+  font-weight:$weight-semibold;
 }
 
 @mixin font-bold {
-	font-family:$font-bold;
-	font-weight:$weight-bold;
+  font-family:$font-bold;
+  font-weight:$weight-bold;
 }
 
 @mixin icon-feedback {
-	&:focus,&:hover {
-		@include shadow(2);
-		transform:translateY(-5px);
-	}
-	&:active {
-		transform:translateY(-1px);
-		@include shadow(1);
-	}
+  &:focus,&:hover {
+    @include shadow(2);
+    transform:translateY(-5px);
+  }
+  &:active {
+    transform:translateY(-1px);
+    @include shadow(1);
+  }
 }

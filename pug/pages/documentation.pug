@@ -5,11 +5,8 @@ block page-variables
   - var PageID = 'documentation';
 
 block stylesheets
-  style.
-    .col-sample {
-      box-shadow:inset 0 0 0 1px #eee;
-      padding:20px;
-    }
+  link(rel="stylesheet" href="demo/css/documentation.css")
+  link(rel="stylesheet" href="demo/css/syntax-highlighting.css")
 
 block left-sidebar
   .sidebar.left
@@ -19,67 +16,110 @@ block left-sidebar
       a(href="#alignment") Alignment
 
 block content
+  mixin cp-embed(height,theme_id,slug_hash,default_tab,data_user,pen_title)
+    p.codepen(data-height= height, data-theme-id= theme_id, data-slug-hash= slug_hash, data-default-tab= default_tab, data-user= data_user, data-embed-version='2', data-pen-title= pen_title)
+      | See the Pen
+      a(href= 'http://codepen.io/allusis/pen/' + slug_hash)= pen_title
+      |  by Tony Montemorano (
+      a(href='http://codepen.io/allusis') @allusis
+      | ) on
+      a(href='http://codepen.io') CodePen
+
   main
+
+    .row
+      .col-sm
+        .name Col 01
+      .col-sm
+        .name Col 02
+      .col-sm
+        .name Col 03
+      .col-sm
+        .name Add as many
+      .col-sm
+        .name as you'd like..
+
+    .flex-sm.gutter-md.m-vertical--md
+      .col-sm
+        .name Col 01
+      .col-sm
+        .name Col 02
+      .col-sm
+        .name Col 03
+
+    .flex-sm.gutter-lg.m-vertical--md
+      .col-sm
+        .name Col 01
+      .col-sm
+        .name Col 02
+      .col-sm
+        .name Col 03
+      .col-sm
+        .name Col 04
+      .col-sm
+        .name Col 05
+
+
     .page-header
       h1.title Documentation
       h5.description Thing's that I've probably spent too much time refactoring, and finally decided to record.
 
     .section-header
-      h2 Grid
+      h2 Columns
       p.description Just some basic flex-rows... The rest we'll roll on our own as needed
 
     section.m-vertical--md.p-horizontal
       h4 Without gutters
-      .flex.sm
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
+      .code-block
+        +cp-embed("150","27735","NdBYbv","result", "allusis","Protoplate - Columns / Without gutters")
 
     section.m-vertical--md.p-horizontal
-      h4.m-top--large With small gutters
-      .flex.sm.gutter-sm
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
-        .col-sample
-          .name Add as many
-        .col-sample
-          .name as you'd like..
+      h4.m-top--large With gutters
+      .code-block
+        +cp-embed("300","27735","jypzLZ","result", "allusis","Protoplate - Columns / With gutters")
 
     section.m-vertical--md.p-horizontal
-      h4.m-top--large With medium gutters
-      .flex.sm.gutter-md
-        .col-sample
+      h4.m-top--large Wrap
+      .flex-sm.gutter-lg.wrap-all
+        .col-sm
           .name Col 01
-        .col-sample
+        .col-sm
           .name Col 02
-        .col-sample
+        .col-sm
           .name Col 03
-        .col-sample
-          .name Cold 04
-        .col-sample
+        .col-sm
+          .name Col 04
+        .col-sm
           .name Col 05
-        .col-sample
-          .name Col 06
+      pre.line-numbers(data-start="1")
+        code.language-html
+          | &lt;!-- Typically in this scenario you'll probably want to add some
+          | min or max width styles for the children unless the content is predictable. --&gt;
+          | &lt;div class="flex wrap-all"&gt;&lt;/div&gt;
+          | &lt;div class="flex wrap-sm"&gt;&lt;/div&gt;
+          | &lt;div class="flex wrap-md"&gt;&lt;/div&gt;
+          | &lt;div class="flex wrap-lg"&gt;&lt;/div&gt;
+
+    .section-header
+      h2 Alignment
+      p.description Alignment helpers get out of hand quickly for responsive design. All of these allignment options will require a size modifier in the class name to target all or minimum screen sizes. See examples below.
 
     section.m-vertical--md.p-horizontal
-      h4.m-top--large With large gutters
-      .flex.sm.gutter-lg
-        .col-sample
-          .name Col 01
-        .col-sample
-          .name Col 02
-        .col-sample
-          .name Col 03
+      h4.m-top--large Space between
+      .flex-sm.justify-space-between-all.border
+        .col-sm
+          .name Col Left
+        .col-sm
+          .name Col Right
 
-
+    section.m-vertical--md.p-horizontal
+      h4.m-top--large Space around
+      .flex-sm.justify-space-around-all.border
+        .col-sm
+          .name Col Left
+        .col-sm
+          .name Col Right
 
 block scripts
-  script.
+  script(src="demo/js/prism.js")
 

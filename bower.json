@@ -1,0 +1,23 @@
+{
+  "name": "protoplate",
+  "description": "Tonys Prototype Boilerplate",
+  "main": "index.html",
+  "authors": [
+    "Tony Montemorano"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "pug",
+    "scss",
+    "boilerplate"
+  ],
+  "homepage": "https://github.com/allusis/Protoplate",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

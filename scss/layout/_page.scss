@@ -1,3 +1,19 @@
+.page-hero {
+	padding-top:$gap;
+	padding-bottom:$gap-lg;
+	.title {
+		font-size:66px;
+		//text-transform:uppercase;
+		font-weight:700;
+		margin:0;
+	}
+	.description {
+		text-align:right;
+		max-width:220px;
+		color:rgba(black,0.5);
+	}
+
+}
 .page-wrapper {
 	padding:0;
 	display:flex;
@@ -5,10 +21,6 @@
 	flex-direction:column;
 }
 .page-content {
-	padding:$gap-md $gap;
-	width:100%;
-	max-width:$max-content-width + $gap;
-	margin:0 auto;
 	@media (max-width:$screen-sm-min) {
 		flex-wrap:wrap;
 	}
@@ -34,18 +46,23 @@
 		&.left {
 			@media (min-width:$screen-sm) {
 				margin-right:$gap-lg;
-				width:200px;
+				min-width:200px;
 
 			}
 		}
 	}
 }
 
-.container {
+.container,.container-narrow {
 	width:100%;
-	max-width:$max-content-width + $gap;
 	padding:0 $gap;
 	margin:0 auto;
+}
+.container {
+	max-width:$max-content-width + $gap;
+}
+.container-narrow {
+	max-width:$max-content-width - ($gap-lg * 2);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -53,8 +70,7 @@ h1,h2,h3,h4,h5,h6 {
 	padding:0;
 }
 h2 {
-	font-size:26px;
-	text-transform:uppercase;
+	font-size:24px;
 }
 h3 {
 	font-size:18px;
@@ -90,47 +106,77 @@ h4 {
 	}
 }
 
-.flex {
+[class*="flex"] {
 	> div {
 		flex:1;
 	}
-	&.sm {
+	&[class*="-all"] {
+		display:flex;
+	}
+	&[class*="-sm"] {
 		@media (min-width:$screen-sm) {
 			display:flex;
 		}
 	}
-	&.md {
+	&[class*="-md"] {
 		@media (min-width:$screen-md) {
 			display:flex;
 		}
 	}
-	&.lg {
+	&[class*="-lg"] {
 		@media (min-width:$screen-lg) {
 			display:flex;
 		}
 	}
-	&.all {
-		display:flex;
-	}
 	&.gutter-sm {
-		margin:0 (-($gap));
-		padding:0 ($gap-md / 2);
+		margin-left:-($gap);
+		margin-right:-($gap);
 		> div {
-			margin:0 $gap-xs;
+			margin-left:$gap-sm;
+			margin-right:$gap-sm;
+			//margin:0 $gap-xs;
 		}
 	}
 	&.gutter-md {
-		margin:0 (-($gap-md));
-		padding:0 ($gap-lg / 2);
+		margin-left:(-($gap-md));
+		margin-right:(-($gap-md));
+		padding-left:($gap-md / 2);
+		padding-right:($gap-md / 2);
 		> div {
 			margin:0 $gap-sm;
 		}
 	}
 	&.gutter-lg {
-		margin:0 (-($gap-lg));
-		padding:0 ($gap-lg / 2);
+		margin-left:(-($gap-lg));
+		margin-right:(-($gap-lg));
+		padding-left:($gap-lg / 2);
+		padding-right:($gap-lg / 2);
 		> div {
 			margin:0 $gap;
 		}
 	}
+}
+
+
+.border {
+	border:1px solid #eee;
+	padding:$gap-sm;
+}
+
+.justify-space-between-all {
+	justify-content:space-between;
+	> div {
+		flex:none;
+	}
+}
+
+.justify-space-around-all {
+	justify-content:space-around;
+	> div {
+		flex:none;
+	}
+}
+
+.wrap-all {
+	flex-wrap:wrap;
 }

@@ -1,8 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Esteban|Montserrat:400,600);
+
+// color map
+$color: (
+  text: #333,
+  background: #FFF,
+);
+
+// font map
+$font: (
+  family: (
+    body: (Esteban, Helvetica, sans-serif),
+    head: (Montserrat, Helvetica, sans-serif)
+  ),
+  weight: (
+    body: 400,
+    head: 600,
+  ),
+  size: (
+    body: 16px,
+    h1: 2.4em,
+    h2: 2em,
+    h3: 1.6em,
+    h4: 1.4em,
+  ),
+  leading: (
+    body: 1.6,
+    head: 1.2,
+  )
+);
+
+// associate variable map name to an actual variable map
+$var-maps: (
+  color: $color,
+  font:  $font
+);
+
+// which property uses which var map
+// you would edit this for each property you want to use variables for
+$props: (
+  background-color: color,
+  color:            color,
+  font-family:      (font, family),
+  font-size:        (font, size),
+  font-weight:      (font, weight),
+  line-height:      (font, leading),
+);
+
+
 //- Colors
-
-$blue:                      #007DBC;
-
-
 $gray-lt:                   #eee;
 $gray:                      #ddd;
 $gray-md:                   #999;
@@ -10,7 +55,7 @@ $gray-dk:                   #333;
 
 $tan:                       #E7E4E2;
 
-$brand-primary:             $blue;
+$brand-primary:             #007DBC;
 $brand-gray:                #64727B;
 
 $success:                   #93C461;
@@ -18,59 +63,35 @@ $info:                      #5bc0de;
 $warning:                   #f0ad4e;
 $danger:                    #d9534f;
 
-
 $body-bg:                   white;
 
-$text-color:                #58656E;
+$text-color:                #444;
 $text-medium:               $gray-md;
 $text-light:                #aaa;
 
-$header-height:             60px;
-$header-bg:                 $blue;
-$header-color:              white;
+$blue:                      #007DBC;
 
 $footer-height:             50px;
-$footer-bg:                 $brand-gray;
-$footer-color:              white;
+$footer-bg:                 white;
+$footer-color:              $brand-gray;
 
-
-$link-color:                $blue;
-$link-active:               darken($blue,20%);
+$link-color:                $brand-primary;
+$link-active:               darken($brand-primary,10%);
 
 $border-default:            $gray;
 $border-lt:                 $gray-lt;
 
-$border-radius-sm:          3px;
 $border-radius:             4px;
 $border-radius-md:          8px;
 $border-radius-lg:          12px;
-$border-radius-round:       50%;
 
 //-- Grid
 $grid-gutter-width:         30px;
 
 //-- Shadows
 $default-box-shadow:        0 1px 3px 0 rgba(14,39,70,0.15);
-$box-shadow:                0 1px 3px 0 rgba(14,39,70,0.15);
 
 //--- Forms
-$select-bg: white;
-$select-border-color: #c7c7c7;
-$select-border-width: 1px;
-$select-border-radius: 0;
-$select-box-shadow: 0 1px 1px #e7e7e7;
-$select-padding: 5px;
-$select-height: 32px;
-$select-color: #555;
-$select-font: 13px;
-$select-focus-color: #96b7ff;
-
-
-$input-touch-color: #222;
-$input-touch-color-active: $blue;
-
-
-$input-focus-border:$blue;
 
 
 //--- Spacing
@@ -82,10 +103,11 @@ $gap-lg:                    40px;
 
 
 //-- Font's
-$font-regular:               "Helvetica", sans-serif;
-$font-light:                 "Helvetica", sans-serif;
-$font-semibold:              "Helvetica", sans-serif;
-$font-bold:                  "Helvetica", sans-serif;
+$font-heading:               "Montserrat", sans-serif;
+$font-regular:               "Esteban", sans-serif;
+$font-light:                 "Esteban", sans-serif;
+$font-semibold:              "Esteban", sans-serif;
+$font-bold:                  "Esteban", sans-serif;
 
 $weight-regular:             400;
 $weight-light:               300;

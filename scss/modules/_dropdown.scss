@@ -9,7 +9,7 @@
 	min-width:240px;
 	.dropdown-items {
 		margin-top:$gap-xs;
-		border-radius:$border-radius-sm;
+		border-radius:$border-radius;
 		box-shadow:0 3px 6px rgba(black, 0.05), 0 3px 6px rgba(black, 0.15);
 		padding-bottom:$gap-xs;
 		padding-top:$gap-xs;
@@ -49,7 +49,7 @@
 			padding-right:$gap-md;
 			position:relative;
 			font-size:16px;
-			border-radius:$border-radius-sm;
+			border-radius:$border-radius;
 			color:$blue;
 			@include font-regular;
 			-webkit-user-select: none;
