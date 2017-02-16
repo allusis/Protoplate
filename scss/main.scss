@@ -4,15 +4,15 @@
 @import "base/variables";
 @import "base/mixins";
 @import "base/functions";
-@import "base/scaffolding";
 @import "base/css4-variables";
+@import "base/scaffolding";
 @import "base/helpers";
 @import "base/grid";
 
 // The frame
 @import "layout/header";
-@import "layout/footer";
 @import "layout/page";
+@import "layout/footer";
 
 // The furniture
 @import "modules/forms";
