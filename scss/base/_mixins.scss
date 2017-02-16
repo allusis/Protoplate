@@ -63,22 +63,22 @@
 
 @mixin font-regular {
   font-family:$font-regular;
-  font-weight:$weight-regular;
+  font-weight:$font-weight-regular;
 }
 
 @mixin font-light {
   font-family:$font-light;
-  font-weight:$weight-light;
+  font-weight:$font-weight-light;
 }
 
 @mixin font-semibold {
   font-family:$font-semibold;
-  font-weight:$weight-semibold;
+  font-weight:$font-weight-semibold;
 }
 
 @mixin font-bold {
   font-family:$font-bold;
-  font-weight:$weight-bold;
+  font-weight:$font-weight-bold;
 }
 
 @mixin icon-feedback {

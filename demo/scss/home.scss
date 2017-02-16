@@ -1,0 +1,18 @@
+@import "../../scss/base/variables";
+@import "../../scss/base/mixins";
+
+.page-hero {
+  padding-top:$gap;
+  padding-bottom:$gap-lg;
+  .title {
+    font-size:66px;
+    //text-transform:uppercase;
+    font-weight:700;
+    margin:0;
+  }
+  .description {
+    text-align:right;
+    max-width:220px;
+    color:rgba(black,0.5);
+  }
+}

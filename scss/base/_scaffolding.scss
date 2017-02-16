@@ -1,24 +1,3 @@
-// setup the css4 variable definitions
-:root {
-  // for each variable map
-  @each $var-map-name, $var-map in $var-maps {
-    // for each variable in the variable map
-    @each $var, $val in $var-map {
-      // if it is a map, go another level deep
-      @if type-of($val) == map {
-        // each in the map
-        @each $var-n, $val-n in $val {
-          // do the definition
-          #{--$var-map-name}-#{$var}-#{$var-n}: $val-n;
-        }
-      } @else {
-        // do the definition
-        #{--$var-map-name}-#{$var}: $val;
-      }
-    }
-  }
-}
-
 *, *:before, *:after {box-sizing: inherit}
 
 html {
@@ -65,7 +44,7 @@ a {
 }
 
 label {
-  font-weight:$weight-semibold;
+  font-weight:$font-weight-semibold;
   color:$text-color;
 }
 

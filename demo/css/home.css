@@ -1,0 +1,5 @@
+.page-hero { padding-top: 20px; padding-bottom: 40px; }
+
+.page-hero .title { font-size: 66px; font-weight: 700; margin: 0; }
+
+.page-hero .description { text-align: right; max-width: 220px; color: rgba(0, 0, 0, 0.5); }
