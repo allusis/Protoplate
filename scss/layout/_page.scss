@@ -1,15 +1,3 @@
-.container,.container-narrow {
-  width:100%;
-  padding:0 $gap;
-  margin:0 auto;
-}
-.container {
-  max-width:$max-content-width + $gap;
-}
-.container-narrow {
-  max-width:$max-content-width - ($gap-lg * 2);
-}
-
 .page-wrapper {
   padding:0;
   display:flex;

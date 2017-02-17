@@ -96,8 +96,6 @@ $color: (
   text: #333,
   background: #FFF,
 );
-
-// font map
 $font: (
   family: (
     body: ($font-regular),
@@ -117,13 +115,27 @@ $font: (
   leading: (
     body: $line-height-base,
     head: $line-height-large,
-  )
+  ),
+);
+
+$gutter: (
+  width: 1rem,
+  margin: 2rem,
+);
+
+$screen-size: (
+  xs-min: 30,
+  sm-min: 48,
+  md-min: 64,
+  lg-min: 75,
 );
 
 // associate variable map name to an actual variable map
 $var-maps: (
   color: $color,
-  font:  $font
+  font:  $font,
+  gutter:  $gutter,
+  screen-size:  $screen-size
 );
 
 // which property uses which var map
@@ -131,8 +143,15 @@ $var-maps: (
 $props: (
   background-color: color,
   color:            color,
+  padding-left:     gutter,
+  padding-right:    gutter,
+  margin-left:      gutter,
+  margin-right:     gutter,
+  width:            screen-size,
   font-family:      (font, family),
   font-size:        (font, size),
   font-weight:      (font, weight),
   line-height:      (font, leading),
+  min-width:        screen-size
+
 );

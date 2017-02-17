@@ -19,5 +19,8 @@
   },
   "main": "index.html",
   "repository": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "flexboxgrid": "^6.3.1"
+  }
 }

@@ -1,30 +1,26 @@
 @import url(https://fonts.googleapis.com/css?family=Esteban|Montserrat:400,600);
 
-// Hammers & nails
+@import "base/functions";
 @import "base/variables";
 @import "base/mixins";
-@import "base/functions";
 @import "base/css4-variables";
 @import "base/scaffolding";
 @import "base/helpers";
-@import "base/grid";
 
-// The frame
 @import "layout/header";
 @import "layout/page";
 @import "layout/footer";
 
-// The furniture
 @import "modules/forms";
 @import "modules/buttons";
 @import "modules/table";
 @import "modules/dropdown";
 @import "modules/media";
 
-// The entertainment
 @import "state/animation";
 
-// The plumber
+@import "../node_modules/flexboxgrid/dist/flexboxgrid.css"
+
 //@import "state/debug";
 //@import "state/base-holdit";
 
